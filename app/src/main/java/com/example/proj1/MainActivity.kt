@@ -16,38 +16,50 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountBox
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.proj1.navigation.MovieNavigation
 import com.example.proj1.ui.theme.Proj1Theme
 
+
+//class MainActivity : ComponentActivity() {
+//
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//
+//        super.onCreate(savedInstanceState)
+//
+//        setContent {
+//
+//            Proj1Theme {
+//                Surface(
+//                    modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
+//                ) {
+//                    Greeting("Android")
+//                    MainContent()
+//                }
+//
+//            }
+//
+//        }
+//
+//    }
+//
+//}
 
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
-
         setContent {
-
             Proj1Theme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                    MainContent()
-                }
-
+                MovieNavigation()
             }
-
         }
-
     }
-
 }
 
 @Composable
@@ -104,7 +116,7 @@ fun MovieRow(movie: String, onItemClick: (String) -> Unit = {}) {
 fun DefaultPreview() {
 
     Proj1Theme {
-        Greeting("Android")
+        MovieNavigation()
     }
 }
 
