@@ -102,7 +102,7 @@ fun MovieRow(movie: Movie = getMovies()[0], onItemClick: (String) -> Unit = {}) 
                     imageVector = if (expanded) Icons.Filled.KeyboardArrowUp else Icons.Filled.KeyboardArrowDown,
                     contentDescription = if (expanded) "Up arrow" else "Down arrow",
                     modifier = Modifier.size(25.dp).clickable { expanded = !expanded },
-                    tint = Color.Blue
+                    tint = Color.Magenta
                 )
             }
         }
