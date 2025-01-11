@@ -7,6 +7,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountBox
+import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -95,14 +96,14 @@ fun MovieRow(movie: Movie = getMovies()[0], onItemClick: (String) -> Unit = {}) 
                         Divider(modifier = Modifier.padding(3.dp))
                         Text(text = "Actors: ${movie.actors}", style = MaterialTheme.typography.caption)
                         Text(text = "Director: ${movie.director}", style = MaterialTheme.typography.caption)
-                        Icon(
-                            imageVector = if (expanded) Icons.Filled.KeyboardArrowUp else Icons.Filled.KeyboardArrowUp,
-                            contentDescription = "Down arrow",
-                            modifier = Modifier.size(25.dp).clickable { expanded = !expanded },
-                            tint = Color.LightGray
-                        )
                     }
                 }
+                Icon(
+                    imageVector = if (expanded) Icons.Filled.KeyboardArrowUp else Icons.Filled.KeyboardArrowDown,
+                    contentDescription = if (expanded) "Up arrow" else "Down arrow",
+                    modifier = Modifier.size(25.dp).clickable { expanded = !expanded },
+                    tint = Color.LightGray
+                )
             }
         }
     }
